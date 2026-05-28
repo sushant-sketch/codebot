@@ -1,5 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { EVENTS } from "@/lib/events-data";
+import { EVENTS, type EventInfo } from "@/lib/events-data";
 import { ArrowLeft, ArrowRight, Trophy, Users, Cpu, Timer, MapPin, Calendar } from "lucide-react";
 
 export const Route = createFileRoute("/events/$slug")({
@@ -18,7 +18,7 @@ export const Route = createFileRoute("/events/$slug")({
 });
 
 function EventDetail() {
-  const { event: e } = Route.useLoaderData();
+  const { event: e } = Route.useLoaderData() as { event: EventInfo };
   const c = e.color;
 
   return (
