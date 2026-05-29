@@ -8,7 +8,7 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Code Bot Championship 2026 — India's Ultimate Robotics, AI & Coding Battle" },
-      { name: "description", content: "21–22 August 2026 · ₹1.5 Lakh prize pool · 6 mega events for Grades III–XII. Robo Race, Robo Soccer, Line Follower, Bot Combat, Drone Racing, Innovation." },
+      { name: "description", content: "22 August 2026 · ₹1.5 Lakh prize pool · 6 mega events for Grades III–XII. Robo Race, Robo Soccer, Line Follower, Bot Combat, Drone Racing, Innovation." },
     ],
   }),
   component: Home,
@@ -78,7 +78,7 @@ export default function Home() {
           </motion.p>
 
           <div className="mt-6 inline-flex items-center gap-4 text-sm text-white/60">
-            <span className="inline-flex items-center gap-1.5"><Calendar className="h-4 w-4 text-[#FF7A2F]" /> 21–22 August 2026</span>
+            <span className="inline-flex items-center gap-1.5"><Calendar className="h-4 w-4 text-[#FF7A2F]" /> 22 August 2026</span>
             <span className="h-1 w-1 rounded-full bg-white/30" />
             <span className="inline-flex items-center gap-1.5"><MapPin className="h-4 w-4 text-[#00C2E0]" /> Lucknow, India</span>
           </div>
