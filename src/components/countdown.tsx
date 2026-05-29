@@ -1,13 +1,17 @@
 import { useEffect, useState } from "react";
 
-const TARGET = new Date("2026-08-21T09:00:00+05:30").getTime();
+const TARGET = new Date("2026-08-22T09:00:00+05:30").getTime();
 
 export function Countdown() {
-  const [now, setNow] = useState(() => Date.now());
+  const [now, setNow] = useState<number | null>(null);
   useEffect(() => {
+    setNow(Date.now());
     const i = setInterval(() => setNow(Date.now()), 1000);
     return () => clearInterval(i);
   }, []);
+  if (now === null) {
+    return <div className="grid grid-cols-4 gap-2 sm:gap-4 max-w-2xl mx-auto" />;
+  }
   const diff = Math.max(0, TARGET - now);
   const d = Math.floor(diff / 86400000);
   const h = Math.floor((diff / 3600000) % 24);
