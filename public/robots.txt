@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://neo-robot-forge.lovable.app/sitemap.xml
