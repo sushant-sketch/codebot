@@ -103,7 +103,7 @@ export const EVENTS: EventInfo[] = [
       "Most goals scored across two halves wins the match",
       "Knockout brackets — single-elimination from quarters",
       "Tie-breaker: 2-minute golden goal, then penalty shootout",
-      "Senior bonus: +1 goal for autonomous-only side",
+      "Senior bonus: +1 goal for autonomous-only",
       "Champions, Runners-up & 2nd Runners-up per division",
     ],
   },
