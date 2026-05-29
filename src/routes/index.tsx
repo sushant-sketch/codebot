@@ -182,7 +182,7 @@ export default function Home() {
         <div className="relative mx-auto max-w-7xl px-5 grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <div className="text-[11px] tracking-[0.35em] text-[#00C2E0]">EVENT HIGHLIGHTS</div>
-            <h2 className="font-display mt-2 text-3xl sm:text-5xl font-black">Two days. <br />Six arenas. <br /><span className="gradient-text">One champion.</span></h2>
+            <h2 className="font-display mt-2 text-3xl sm:text-5xl font-black">One Day. <br />Six arenas. <br /><span className="gradient-text">Many Champions.</span></h2>
             <p className="mt-5 text-white/65 max-w-lg leading-relaxed">From neon-lit drone gates to caged combat arenas, every event is engineered for spectacle. Live commentary, leaderboards, replay screens, and industry judges turn every minute into a moment.</p>
             <ul className="mt-6 space-y-3 text-sm text-white/75">
               {["Cinematic LED-lit arenas", "Live leaderboards & jumbotron replays", "FPV drone feed on main stage", "Industry mentor pit-stops", "On-site code labs & repair stations"].map((x) => (
