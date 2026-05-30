@@ -42,7 +42,7 @@ function EventDetail() {
             ))}
           </div>
           <div className="mt-6 inline-flex items-center gap-4 text-xs text-white/55">
-            <span className="inline-flex items-center gap-1"><Calendar className="h-3.5 w-3.5" />21–22 Aug 2026</span>
+            <span className="inline-flex items-center gap-1"><Calendar className="h-3.5 w-3.5" />22 Aug, 2026</span>
             <span className="inline-flex items-center gap-1"><MapPin className="h-3.5 w-3.5" />Lucknow Arena</span>
           </div>
         </div>
@@ -71,7 +71,7 @@ function EventDetail() {
           <p className="text-white/75 leading-relaxed">{e.description}</p>
         </Card>
 
-        <Card title="Robot Specs" color={c}>
+        <Card title={e.slug === "innovation" ? "Project Specs" : "Robot Specs"} color={c}>
           <ul className="divide-y divide-white/10">
             {e.specs.map((s) => (
               <li key={s.label} className="flex items-center justify-between py-2 text-sm">
@@ -82,7 +82,7 @@ function EventDetail() {
           </ul>
         </Card>
 
-        <Card title="Game Rules" color={c} className="lg:col-span-2">
+        <Card title={e.slug === "innovation" ? "Project Rules" : "Game Rules"} color={c} className="lg:col-span-2">
           <ol className="space-y-3">
             {e.rules.map((r, i) => (
               <li key={i} className="flex gap-3 text-sm text-white/75">
