@@ -245,9 +245,9 @@ export const EVENTS: EventInfo[] = [
     grades: "Grades III–XII",
     team: "1–5 Team Members",
     format: "4 Judging Criteria",
-    arena: "Exhibition hall",
-    rounds: "Pitch + Judging",
-    time: "10 min Presentation Time",
+    arena: "10 min Presentation Time",
+    rounds: "1–5 Team Members",
+    time: "4 Judging Criteria",
     description:
       "This is not just a game — it's a mission. Teams identify a real-world problem in their community and engineer a robotic or tech-based solution. From concept to working prototype, every team presents their innovation live to an expert panel. The best ideas will be those that are useful, creative, and built with heart.",
     specs: [
