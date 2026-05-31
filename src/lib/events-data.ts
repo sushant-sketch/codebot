@@ -119,7 +119,7 @@ export const EVENTS: EventInfo[] = [
     format: "Autonomous",
     arena: "15–20m",
     rounds: "2 cm",
-    time: "60 sec",
+    time: "2 min",
     description:
       "The purest test of robotics — a fully autonomous bot must follow a 2cm black line on white surface as fast as possible. No remote control allowed. Junior category has gentle curves; Senior category adds sharp turns, T-junctions, and gaps requiring advanced PID control coding.",
     specs: [
