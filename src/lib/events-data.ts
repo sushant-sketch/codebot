@@ -117,8 +117,8 @@ export const EVENTS: EventInfo[] = [
     grades: "Grades III–XII",
     team: "1–3 Members",
     format: "Autonomous",
-    arena: "5 m track",
-    rounds: "3 runs",
+    arena: "15–20m",
+    rounds: "2 cm",
     time: "60 sec",
     description:
       "Build a compact autonomous robot that follows a black line on white surface across straights, curves, intersections, and gap-jumps. Pure sensor-and-code precision — no remote control allowed.",
