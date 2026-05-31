@@ -201,12 +201,12 @@ export const EVENTS: EventInfo[] = [
     icon: "🚁",
     grades: "Grades VII–XII",
     team: "1–3 Members",
-    format: "FPV / Line-of-sight",
-    arena: "20×10m Course Size",
-    rounds: "6–10 Gates / Hoops",
-    time: "2 min Race Window",
+    format: "Quadcopter or Micro Drone",
+    arena: "20×10m",
+    rounds: "6–10",
+    time: "2 min",
     description:
-      "Teams build or assemble a micro-drone and pilot it through 6 to 10 aerial hoops in a 3D indoor course. Junior teams (Gr VII–IX) use standard RC. Everyone can use quadcopter drone also. Speed + precision = gold.",
+      "Teams build or assemble a micro-drone and pilot it through 6 to 10 aerial hoops in a 3D indoor course. Junior teams (Gr VII–IX) & Senior teams (Gr X–XII) use standard RC. Everyone can use quadcopter drone also. Speed + precision = gold.",
     specs: [
       { label: "Max diagonal", value: "250mm (micro class)" },
       { label: "Max weight", value: "350 g (incl. battery)" },
