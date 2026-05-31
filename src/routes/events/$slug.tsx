@@ -52,9 +52,9 @@ function EventDetail() {
       <section className="mx-auto max-w-6xl px-5 -mt-6">
         <div className="grid grid-cols-3 gap-3 sm:gap-5">
           {[
-            { l: "Arena", v: e.arena, i: MapPin },
-            { l: "Rounds", v: e.rounds, i: Cpu },
-            { l: "Time", v: e.time, i: Timer },
+            { l: e.slug === "drone-racing" ? "Course Size" : "Arena", v: e.arena, i: MapPin },
+            { l: e.slug === "drone-racing" ? "Gates / Hoops" : "Rounds", v: e.rounds, i: Cpu },
+            { l: e.slug === "drone-racing" ? "Race Window" : "Time", v: e.time, i: Timer },
           ].map((s) => (
             <div key={s.l} className="glass rounded-2xl p-5 text-center" style={{ boxShadow: `inset 0 0 0 1px ${c}33` }}>
               <s.i className="h-4 w-4 mx-auto mb-2" style={{ color: c }} />
