@@ -1,7 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { EVENTS } from "@/lib/events-data";
 import { CheckCircle2, QrCode, Sparkles, Trophy, Users, X } from "lucide-react";
+import { PageFade, Reveal } from "@/components/reveal";
 
 export const Route = createFileRoute("/register")({
   head: () => ({ meta: [{ title: "Register · Code Bot Championship 2026" }] }),
