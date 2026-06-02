@@ -19,23 +19,23 @@ function Register() {
     setSelected((s) => (s.includes(slug) ? s.filter((x) => x !== slug) : [...s, slug]));
 
   return (
-    <div className="pt-32 pb-24">
+    <PageFade className="pt-32 pb-24">
       <div className="mx-auto max-w-5xl px-5">
         {/* Early bird banner */}
-        <div className="relative overflow-hidden rounded-2xl glass mb-8 p-4 sm:p-5 flex items-center gap-3 flex-wrap" style={{ boxShadow: "inset 0 0 0 1px rgba(255,215,0,0.4)" }}>
-          <Sparkles className="h-5 w-5 text-[#FFD700]" />
+        <Reveal className="relative overflow-hidden rounded-2xl glass mb-8 p-4 sm:p-5 flex items-center gap-3 flex-wrap" style={{ boxShadow: "inset 0 0 0 1px rgba(255,215,0,0.4)" }}>
+          <Sparkles className="h-5 w-5 text-[#FFD700] animate-pulse" />
           <div className="text-sm">
             <span className="font-bold text-[#FFD700]">EARLY BIRD OPEN</span>
             <span className="text-white/65 ml-2">Save up to 20% on team fees · Ends 15 August 2026</span>
           </div>
           <div className="ml-auto text-[10px] tracking-[0.3em] text-white/40">LIMITED SEATS</div>
-        </div>
+        </Reveal>
 
-        <div className="text-center mb-10">
+        <Reveal className="text-center mb-10" delay={0.05}>
           <div className="text-[11px] tracking-[0.35em] text-[#FF7A2F]">REGISTRATION</div>
           <h1 className="font-display mt-3 text-4xl sm:text-6xl font-black">Lock in your <span className="gradient-text">spot</span></h1>
           <p className="mt-4 text-white/65 max-w-xl mx-auto">A simple, 3-step process. Pay by UPI or card. Get instant confirmation.</p>
-        </div>
+        </Reveal>
 
         <form onSubmit={(e) => { e.preventDefault(); setDone(true); }} className="space-y-6">
           {/* Type */}
