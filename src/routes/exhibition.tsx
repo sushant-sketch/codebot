@@ -28,46 +28,62 @@ function Exhibition() {
   const filtered = active === "All" ? projects : projects.filter((p) => p.cat === active);
 
   return (
-    <div className="pt-32 pb-24">
+    <PageFade className="pt-32 pb-24">
       <div className="mx-auto max-w-7xl px-5">
-        <div className="text-center max-w-3xl mx-auto mb-12">
+        <Reveal className="text-center max-w-3xl mx-auto mb-12">
           <div className="text-[11px] tracking-[0.35em] text-[#00C2E0]">PROJECT EXHIBITION</div>
           <h1 className="font-display mt-3 text-4xl sm:text-6xl font-black">Where Student <span className="gradient-text">Ideas</span> Become Real</h1>
           <p className="mt-5 text-white/65">AI projects, robotics innovations, smart automation, and startup-grade prototypes — all built by school students from across India.</p>
-        </div>
+        </Reveal>
 
         <div className="flex flex-wrap justify-center gap-2 mb-10">
           {cats.map((c) => (
-            <button key={c} onClick={() => setActive(c)} className={`px-4 py-2 rounded-full text-xs font-semibold tracking-wide transition ${active === c ? "bg-[#FF7A2F] text-black shadow-[0_0_24px_rgba(255,122,47,0.6)]" : "border border-white/10 text-white/65 hover:text-white hover:border-white/30"}`}>
+            <motion.button
+              key={c}
+              onClick={() => setActive(c)}
+              whileTap={{ scale: 0.95 }}
+              className={`px-4 py-2 rounded-full text-xs font-semibold tracking-wide transition ${active === c ? "bg-[#FF7A2F] text-black shadow-[0_0_24px_rgba(255,122,47,0.6)]" : "border border-white/10 text-white/65 hover:text-white hover:border-white/30"}`}
+            >
               {c}
-            </button>
+            </motion.button>
           ))}
         </div>
 
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 [grid-auto-flow:dense]">
-          {filtered.map((p, i) => (
-            <article key={p.t} className={`group relative rounded-2xl overflow-hidden glass glass-hover ${i % 5 === 0 ? "sm:row-span-2" : ""}`}>
-              <div className={`relative ${i % 5 === 0 ? "aspect-[4/5]" : "aspect-[4/3]"}`} style={{ background: p.img }}>
-                <div className="absolute inset-0 grid-bg opacity-30" />
-                <div className="absolute inset-0 grid place-items-center">
-                  <button className="h-14 w-14 rounded-full grid place-items-center bg-white/10 backdrop-blur border border-white/20 group-hover:scale-110 transition" style={{ boxShadow: `0 0 30px ${p.c}66` }}>
-                    <Play className="h-5 w-5 text-white ml-0.5" fill="white" />
-                  </button>
+          <AnimatePresence mode="popLayout">
+            {filtered.map((p, i) => (
+              <motion.article
+                key={p.t}
+                layout
+                initial={{ opacity: 0, y: 24, scale: 0.96 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.45, delay: i * 0.04, ease: [0.22, 1, 0.36, 1] }}
+                whileHover={{ y: -4 }}
+                className={`group relative rounded-2xl overflow-hidden glass glass-hover ${i % 5 === 0 ? "sm:row-span-2" : ""}`}
+              >
+                <div className={`relative ${i % 5 === 0 ? "aspect-[4/5]" : "aspect-[4/3]"}`} style={{ background: p.img }}>
+                  <div className="absolute inset-0 grid-bg opacity-30" />
+                  <div className="absolute inset-0 grid place-items-center">
+                    <button className="h-14 w-14 rounded-full grid place-items-center bg-white/10 backdrop-blur border border-white/20 group-hover:scale-110 transition" style={{ boxShadow: `0 0 30px ${p.c}66` }}>
+                      <Play className="h-5 w-5 text-white ml-0.5" fill="white" />
+                    </button>
+                  </div>
+                  <div className="absolute top-3 left-3 text-[10px] tracking-[0.25em] px-2 py-1 rounded bg-black/40 backdrop-blur" style={{ color: p.c }}>{p.cat.toUpperCase()}</div>
                 </div>
-                <div className="absolute top-3 left-3 text-[10px] tracking-[0.25em] px-2 py-1 rounded bg-black/40 backdrop-blur" style={{ color: p.c }}>{p.cat.toUpperCase()}</div>
-              </div>
-              <div className="p-5">
-                <h3 className="font-display text-lg font-bold" style={{ color: p.c }}>{p.t}</h3>
-                <p className="mt-2 text-sm text-white/65 leading-relaxed">{p.d}</p>
-                <div className="mt-4 flex items-center justify-between text-xs">
-                  <span className="text-white/40 inline-flex items-center gap-1"><Star className="h-3 w-3" fill="#FFD700" stroke="#FFD700" /> Audience pick</span>
-                  <span className="text-white/60 group-hover:text-white">View →</span>
+                <div className="p-5">
+                  <h3 className="font-display text-lg font-bold" style={{ color: p.c }}>{p.t}</h3>
+                  <p className="mt-2 text-sm text-white/65 leading-relaxed">{p.d}</p>
+                  <div className="mt-4 flex items-center justify-between text-xs">
+                    <span className="text-white/40 inline-flex items-center gap-1"><Star className="h-3 w-3" fill="#FFD700" stroke="#FFD700" /> Audience pick</span>
+                    <span className="text-white/60 group-hover:text-white">View →</span>
+                  </div>
                 </div>
-              </div>
-            </article>
-          ))}
+              </motion.article>
+            ))}
+          </AnimatePresence>
         </div>
       </div>
-    </div>
+    </PageFade>
   );
 }
