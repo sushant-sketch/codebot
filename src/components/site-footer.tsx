@@ -9,9 +9,14 @@ export function SiteFooter() {
           <div className="font-display text-lg font-black gradient-text">CODE BOT 2026</div>
           <p className="mt-3 text-sm text-white/55 leading-relaxed">India's Ultimate Robotics, AI & Coding Championship. Build. Code. Compete. Conquer.</p>
           <div className="mt-5 flex gap-2">
-            {[Instagram, Youtube, Twitter, Linkedin].map((Icon, i) => (
-              <a key={i} href="#" className="h-9 w-9 grid place-items-center rounded-full border border-white/10 text-white/70 hover:text-[#FF7A2F] hover:border-[#FF7A2F] transition">
-                <Icon className="h-4 w-4" />
+            {[
+              { Icon: Instagram, href: "https://www.instagram.com/codebot26/" },
+              { Icon: Youtube, href: "https://www.youtube.com/@codebot26" },
+              { Icon: Twitter, href: "#" },
+              { Icon: Linkedin, href: "#" },
+            ].map((item, i) => (
+              <a key={i} href={item.href} target="_blank" rel="noopener noreferrer" className="h-9 w-9 grid place-items-center rounded-full border border-white/10 text-white/70 hover:text-[#FF7A2F] hover:border-[#FF7A2F] transition">
+                <item.Icon className="h-4 w-4" />
               </a>
             ))}
           </div>

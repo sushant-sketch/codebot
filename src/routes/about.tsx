@@ -30,13 +30,6 @@ function Counter({ to, suffix = "" }: { to: number; suffix?: string }) {
   return <span ref={ref}>{v.toLocaleString()}{suffix}</span>;
 }
 
-const timeline = [
-  { y: "2022", t: "The First Spark", d: "Code Bot launches as a city-level robotics meet with 80 students." },
-  { y: "2023", t: "State Stage", d: "Expanded to 12 cities. 400+ teams. Drone Racing added as a flagship event." },
-  { y: "2024", t: "National Recognition", d: "Backed by leading academies. Innovation Challenge introduced for AI projects." },
-  { y: "2025", t: "1000+ Students", d: "First Bot Combat caged arena. Live national broadcast across YouTube." },
-  { y: "2026", t: "The Championship", d: "₹1.5 Lakh prize pool · 6 mega events · India's biggest student robotics battle." },
-];
 
 function About() {
   return (
@@ -55,8 +48,8 @@ function About() {
       {/* Counters */}
       <section className="mx-auto max-w-7xl px-5 mt-16 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-5">
         {[
-          { v: 1000, s: "+", l: "Participants", c: "#00C2E0" },
-          { v: 200, s: "+", l: "Schools", c: "#FF7A2F" },
+          { v: 500, s: "+", l: "Participants", c: "#00C2E0" },
+          { v: 100, s: "+", l: "Schools", c: "#FF7A2F" },
           { v: 25, s: "+", l: "Cities", c: "#B06EFF" },
           { v: 150000, s: "₹", l: "Prize Pool", c: "#FFD700", prefix: true },
         ].map((s) => (
@@ -86,41 +79,17 @@ function About() {
         ))}
       </section>
 
-      {/* Timeline */}
-      <section className="mx-auto max-w-5xl px-5 mt-24">
-        <div className="text-center mb-12">
-          <div className="text-[11px] tracking-[0.35em] text-[#00C2E0]">JOURNEY</div>
-          <h2 className="font-display mt-2 text-3xl sm:text-5xl font-black">From <span className="gradient-text">spark</span> to championship</h2>
-        </div>
-        <div className="relative">
-          <div className="absolute left-4 sm:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-[#FF7A2F]/60 to-transparent" />
-          {timeline.map((t, i) => (
-            <div key={t.y} className={`relative grid sm:grid-cols-2 gap-6 mb-8 ${i % 2 ? "sm:[&>*:first-child]:order-2" : ""}`}>
-              <div className={`pl-10 sm:pl-0 ${i % 2 ? "sm:text-left sm:pl-10" : "sm:text-right sm:pr-10"}`}>
-                <div className="font-display text-3xl font-black gradient-text">{t.y}</div>
-              </div>
-              <div className={`pl-10 sm:pl-0 ${i % 2 ? "sm:pr-10 sm:text-right" : "sm:pl-10"}`}>
-                <div className="glass rounded-xl p-5 inline-block max-w-sm text-left">
-                  <div className="font-display text-base font-bold text-[#FF7A2F]">{t.t}</div>
-                  <div className="mt-1 text-sm text-white/65">{t.d}</div>
-                </div>
-              </div>
-              <span className="absolute left-2.5 sm:left-1/2 sm:-translate-x-1/2 top-2 h-3 w-3 rounded-full bg-[#FF7A2F] shadow-[0_0_18px_#FF7A2F]" />
-            </div>
-          ))}
-        </div>
-      </section>
 
       {/* Organiser */}
       <section className="mx-auto max-w-5xl px-5 mt-20">
         <div className="glass rounded-3xl p-8 sm:p-12 text-center">
           <GraduationCap className="h-7 w-7 mx-auto mb-3 text-[#00C2E0]" />
           <div className="text-[11px] tracking-[0.35em] text-[#00C2E0]">ORGANISED BY</div>
-          <h3 className="font-display mt-2 text-3xl font-black">SKD Academy</h3>
-          <p className="mt-3 text-white/65 max-w-2xl mx-auto">A leading institution in Lucknow committed to STEM, innovation and future-forward education. Code Bot Championship is our flagship national initiative.</p>
+          <h3 className="font-display mt-2 text-3xl font-black">Create Wiz</h3>
+          <p className="mt-3 text-white/65 max-w-2xl mx-auto">A dynamic education initiative committed to STEM, innovation and future-forward learning. Code Bot Championship is our flagship national event launching for the very first time in 2026.</p>
           <div className="mt-6 flex flex-wrap items-center justify-center gap-6 text-sm text-white/60">
             <span className="inline-flex items-center gap-1.5"><Globe2 className="h-4 w-4 text-[#FF7A2F]" /> Pan-India outreach</span>
-            <span className="inline-flex items-center gap-1.5"><Award className="h-4 w-4 text-[#FF7A2F]" /> 4 years of championships</span>
+            <span className="inline-flex items-center gap-1.5"><Award className="h-4 w-4 text-[#FF7A2F]" /> First edition 2026</span>
           </div>
         </div>
       </section>
