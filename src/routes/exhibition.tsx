@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Play, Star } from "lucide-react";
+import { PageFade, Reveal } from "@/components/reveal";
 
 export const Route = createFileRoute("/exhibition")({
   head: () => ({ meta: [{ title: "Project Exhibition · Code Bot Championship 2026" }] }),
