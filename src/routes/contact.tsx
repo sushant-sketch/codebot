@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { Mail, Phone, MapPin, Instagram, Youtube, Twitter, Linkedin, Send, ChevronDown } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { PageFade, Reveal } from "@/components/reveal";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({ meta: [{ title: "Contact · Code Bot Championship 2026" }] }),
