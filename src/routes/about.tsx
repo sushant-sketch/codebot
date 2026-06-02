@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { Rocket, Target, Eye, GraduationCap, Globe2, Award } from "lucide-react";
+import { PageFade, Reveal } from "@/components/reveal";
 
 export const Route = createFileRoute("/about")({
   head: () => ({ meta: [{ title: "About · Code Bot Championship 2026" }] }),
@@ -33,16 +34,18 @@ function Counter({ to, suffix = "" }: { to: number; suffix?: string }) {
 
 function About() {
   return (
-    <div className="pt-32 pb-24">
+    <PageFade className="pt-32 pb-24">
       {/* Intro */}
       <section className="mx-auto max-w-5xl px-5 text-center">
-        <div className="text-[11px] tracking-[0.35em] text-[#FF7A2F]">ABOUT THE CHAMPIONSHIP</div>
-        <h1 className="font-display mt-3 text-4xl sm:text-6xl font-black">India's Biggest <br /><span className="gradient-text">Student Robotics Battle</span></h1>
-        <p className="mt-6 text-white/70 leading-relaxed max-w-3xl mx-auto">
-          Code Bot Championship is a national-level platform built to unite the brightest student innovators in
-          robotics, AI and coding. Two days, six arenas, one championship trophy — and a community that will
-          shape the next decade of Indian engineering.
-        </p>
+        <Reveal>
+          <div className="text-[11px] tracking-[0.35em] text-[#FF7A2F]">ABOUT THE CHAMPIONSHIP</div>
+          <h1 className="font-display mt-3 text-4xl sm:text-6xl font-black">India's Biggest <br /><span className="gradient-text">Student Robotics Battle</span></h1>
+          <p className="mt-6 text-white/70 leading-relaxed max-w-3xl mx-auto">
+            Code Bot Championship is a national-level platform built to unite the brightest student innovators in
+            robotics, AI and coding. Two days, six arenas, one championship trophy — and a community that will
+            shape the next decade of Indian engineering.
+          </p>
+        </Reveal>
       </section>
 
       {/* Counters */}
@@ -52,13 +55,13 @@ function About() {
           { v: 100, s: "+", l: "Schools", c: "#FF7A2F" },
           { v: 25, s: "+", l: "Cities", c: "#B06EFF" },
           { v: 150000, s: "₹", l: "Prize Pool", c: "#FFD700", prefix: true },
-        ].map((s) => (
-          <div key={s.l} className="glass gradient-border rounded-2xl p-6 text-center">
+        ].map((s, i) => (
+          <Reveal key={s.l} delay={i * 0.08} className="glass gradient-border rounded-2xl p-6 text-center">
             <div className="font-display text-3xl sm:text-5xl font-black" style={{ color: s.c, textShadow: `0 0 18px ${s.c}55` }}>
               {s.prefix ? <>{s.s}<Counter to={s.v} /></> : <><Counter to={s.v} />{s.s}</>}
             </div>
             <div className="mt-2 text-[11px] tracking-[0.25em] text-white/50">{s.l.toUpperCase()}</div>
-          </div>
+          </Reveal>
         ))}
       </section>
 
@@ -68,21 +71,21 @@ function About() {
           { icon: Eye, t: "Vision", d: "To build India's largest grassroots pipeline of robotics & AI talent — from Grade III to global stage.", c: "#00C2E0" },
           { icon: Target, t: "Mission", d: "Equip every school student with a real arena to compete, fail, iterate and master next-gen tech.", c: "#FF7A2F" },
           { icon: Rocket, t: "Why It Matters", d: "The next decade belongs to engineers who can build, code and decide together. The Championship trains that mindset early.", c: "#B06EFF" },
-        ].map((x) => (
-          <div key={x.t} className="glass gradient-border rounded-2xl p-7">
+        ].map((x, i) => (
+          <Reveal key={x.t} delay={i * 0.1} className="glass gradient-border rounded-2xl p-7">
             <div className="h-12 w-12 rounded-xl grid place-items-center mb-4" style={{ background: `${x.c}1A`, boxShadow: `inset 0 0 0 1px ${x.c}55` }}>
               <x.icon className="h-5 w-5" style={{ color: x.c }} />
             </div>
             <h3 className="font-display text-xl font-bold" style={{ color: x.c }}>{x.t}</h3>
             <p className="mt-3 text-sm text-white/65 leading-relaxed">{x.d}</p>
-          </div>
+          </Reveal>
         ))}
       </section>
 
 
       {/* Organiser */}
       <section className="mx-auto max-w-5xl px-5 mt-20">
-        <div className="glass rounded-3xl p-8 sm:p-12 text-center">
+        <Reveal className="glass rounded-3xl p-8 sm:p-12 text-center">
           <GraduationCap className="h-7 w-7 mx-auto mb-3 text-[#00C2E0]" />
           <div className="text-[11px] tracking-[0.35em] text-[#00C2E0]">ORGANISED BY</div>
           <h3 className="font-display mt-2 text-3xl font-black">Create Wiz</h3>
@@ -91,8 +94,8 @@ function About() {
             <span className="inline-flex items-center gap-1.5"><Globe2 className="h-4 w-4 text-[#FF7A2F]" /> Pan-India outreach</span>
             <span className="inline-flex items-center gap-1.5"><Award className="h-4 w-4 text-[#FF7A2F]" /> First edition 2026</span>
           </div>
-        </div>
+        </Reveal>
       </section>
-    </div>
+    </PageFade>
   );
 }

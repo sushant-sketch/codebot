@@ -1,7 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { EVENTS } from "@/lib/events-data";
 import { CheckCircle2, QrCode, Sparkles, Trophy, Users, X } from "lucide-react";
+import { PageFade, Reveal } from "@/components/reveal";
 
 export const Route = createFileRoute("/register")({
   head: () => ({ meta: [{ title: "Register · Code Bot Championship 2026" }] }),
@@ -17,23 +19,23 @@ function Register() {
     setSelected((s) => (s.includes(slug) ? s.filter((x) => x !== slug) : [...s, slug]));
 
   return (
-    <div className="pt-32 pb-24">
+    <PageFade className="pt-32 pb-24">
       <div className="mx-auto max-w-5xl px-5">
         {/* Early bird banner */}
-        <div className="relative overflow-hidden rounded-2xl glass mb-8 p-4 sm:p-5 flex items-center gap-3 flex-wrap" style={{ boxShadow: "inset 0 0 0 1px rgba(255,215,0,0.4)" }}>
-          <Sparkles className="h-5 w-5 text-[#FFD700]" />
+        <Reveal className="relative overflow-hidden rounded-2xl glass mb-8 p-4 sm:p-5 flex items-center gap-3 flex-wrap" style={{ boxShadow: "inset 0 0 0 1px rgba(255,215,0,0.4)" }}>
+          <Sparkles className="h-5 w-5 text-[#FFD700] animate-pulse" />
           <div className="text-sm">
             <span className="font-bold text-[#FFD700]">EARLY BIRD OPEN</span>
             <span className="text-white/65 ml-2">Save up to 20% on team fees · Ends 15 August 2026</span>
           </div>
           <div className="ml-auto text-[10px] tracking-[0.3em] text-white/40">LIMITED SEATS</div>
-        </div>
+        </Reveal>
 
-        <div className="text-center mb-10">
+        <Reveal className="text-center mb-10" delay={0.05}>
           <div className="text-[11px] tracking-[0.35em] text-[#FF7A2F]">REGISTRATION</div>
           <h1 className="font-display mt-3 text-4xl sm:text-6xl font-black">Lock in your <span className="gradient-text">spot</span></h1>
           <p className="mt-4 text-white/65 max-w-xl mx-auto">A simple, 3-step process. Pay by UPI or card. Get instant confirmation.</p>
-        </div>
+        </Reveal>
 
         <form onSubmit={(e) => { e.preventDefault(); setDone(true); }} className="space-y-6">
           {/* Type */}
@@ -138,20 +140,42 @@ function Register() {
       </div>
 
       {/* Success modal */}
-      {done && (
-        <div className="fixed inset-0 z-[60] grid place-items-center bg-black/70 backdrop-blur p-4" onClick={() => setDone(false)}>
-          <div className="relative max-w-md w-full glass rounded-3xl p-8 text-center" style={{ boxShadow: "0 0 80px rgba(255,122,47,0.5)" }} onClick={(e) => e.stopPropagation()}>
-            <button onClick={() => setDone(false)} className="absolute top-4 right-4 h-8 w-8 grid place-items-center rounded-full bg-white/5 hover:bg-white/10"><X className="h-4 w-4" /></button>
-            <div className="mx-auto h-16 w-16 rounded-full grid place-items-center bg-[#FF7A2F]/20" style={{ boxShadow: "0 0 30px rgba(255,122,47,0.6)" }}>
-              <CheckCircle2 className="h-8 w-8 text-[#FF7A2F]" />
-            </div>
-            <h3 className="font-display mt-5 text-2xl font-black">Welcome to <span className="gradient-text">the arena!</span></h3>
-            <p className="mt-3 text-sm text-white/65">Your registration is confirmed. A confirmation email + hall ticket will reach you within 24 hours.</p>
-            <button onClick={() => setDone(false)} className="mt-6 inline-flex rounded-full bg-[#FF7A2F] text-black px-6 py-3 font-bold text-sm">Got it</button>
-          </div>
-        </div>
-      )}
-    </div>
+      <AnimatePresence>
+        {done && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[60] grid place-items-center bg-black/70 backdrop-blur p-4"
+            onClick={() => setDone(false)}
+          >
+            <motion.div
+              initial={{ scale: 0.85, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ type: "spring", damping: 18, stiffness: 240 }}
+              className="relative max-w-md w-full glass rounded-3xl p-8 text-center"
+              style={{ boxShadow: "0 0 80px rgba(255,122,47,0.5)" }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button onClick={() => setDone(false)} className="absolute top-4 right-4 h-8 w-8 grid place-items-center rounded-full bg-white/5 hover:bg-white/10"><X className="h-4 w-4" /></button>
+              <motion.div
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ delay: 0.15, type: "spring", damping: 12 }}
+                className="mx-auto h-16 w-16 rounded-full grid place-items-center bg-[#FF7A2F]/20"
+                style={{ boxShadow: "0 0 30px rgba(255,122,47,0.6)" }}
+              >
+                <CheckCircle2 className="h-8 w-8 text-[#FF7A2F]" />
+              </motion.div>
+              <h3 className="font-display mt-5 text-2xl font-black">Welcome to <span className="gradient-text">the arena!</span></h3>
+              <p className="mt-3 text-sm text-white/65">Your registration is confirmed. A confirmation email + hall ticket will reach you within 24 hours.</p>
+              <button onClick={() => setDone(false)} className="mt-6 inline-flex rounded-full bg-[#FF7A2F] text-black px-6 py-3 font-bold text-sm hover:scale-105 transition">Got it</button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </PageFade>
   );
 }
 
