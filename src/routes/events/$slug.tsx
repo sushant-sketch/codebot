@@ -1,6 +1,8 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { motion } from "framer-motion";
 import { EVENTS, type EventInfo } from "@/lib/events-data";
 import { ArrowLeft, ArrowRight, Trophy, Users, Cpu, Timer, MapPin, Calendar } from "lucide-react";
+import { PageFade, Reveal } from "@/components/reveal";
 
 export const Route = createFileRoute("/events/$slug")({
   loader: ({ params }) => {
