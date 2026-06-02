@@ -55,8 +55,8 @@ function About() {
       {/* Counters */}
       <section className="mx-auto max-w-7xl px-5 mt-16 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-5">
         {[
-          { v: 1000, s: "+", l: "Participants", c: "#00C2E0" },
-          { v: 200, s: "+", l: "Schools", c: "#FF7A2F" },
+          { v: 500, s: "+", l: "Participants", c: "#00C2E0" },
+          { v: 100, s: "+", l: "Schools", c: "#FF7A2F" },
           { v: 25, s: "+", l: "Cities", c: "#B06EFF" },
           { v: 150000, s: "₹", l: "Prize Pool", c: "#FFD700", prefix: true },
         ].map((s) => (
