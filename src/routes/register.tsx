@@ -140,20 +140,42 @@ function Register() {
       </div>
 
       {/* Success modal */}
-      {done && (
-        <div className="fixed inset-0 z-[60] grid place-items-center bg-black/70 backdrop-blur p-4" onClick={() => setDone(false)}>
-          <div className="relative max-w-md w-full glass rounded-3xl p-8 text-center" style={{ boxShadow: "0 0 80px rgba(255,122,47,0.5)" }} onClick={(e) => e.stopPropagation()}>
-            <button onClick={() => setDone(false)} className="absolute top-4 right-4 h-8 w-8 grid place-items-center rounded-full bg-white/5 hover:bg-white/10"><X className="h-4 w-4" /></button>
-            <div className="mx-auto h-16 w-16 rounded-full grid place-items-center bg-[#FF7A2F]/20" style={{ boxShadow: "0 0 30px rgba(255,122,47,0.6)" }}>
-              <CheckCircle2 className="h-8 w-8 text-[#FF7A2F]" />
-            </div>
-            <h3 className="font-display mt-5 text-2xl font-black">Welcome to <span className="gradient-text">the arena!</span></h3>
-            <p className="mt-3 text-sm text-white/65">Your registration is confirmed. A confirmation email + hall ticket will reach you within 24 hours.</p>
-            <button onClick={() => setDone(false)} className="mt-6 inline-flex rounded-full bg-[#FF7A2F] text-black px-6 py-3 font-bold text-sm">Got it</button>
-          </div>
-        </div>
-      )}
-    </div>
+      <AnimatePresence>
+        {done && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[60] grid place-items-center bg-black/70 backdrop-blur p-4"
+            onClick={() => setDone(false)}
+          >
+            <motion.div
+              initial={{ scale: 0.85, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ type: "spring", damping: 18, stiffness: 240 }}
+              className="relative max-w-md w-full glass rounded-3xl p-8 text-center"
+              style={{ boxShadow: "0 0 80px rgba(255,122,47,0.5)" }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button onClick={() => setDone(false)} className="absolute top-4 right-4 h-8 w-8 grid place-items-center rounded-full bg-white/5 hover:bg-white/10"><X className="h-4 w-4" /></button>
+              <motion.div
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ delay: 0.15, type: "spring", damping: 12 }}
+                className="mx-auto h-16 w-16 rounded-full grid place-items-center bg-[#FF7A2F]/20"
+                style={{ boxShadow: "0 0 30px rgba(255,122,47,0.6)" }}
+              >
+                <CheckCircle2 className="h-8 w-8 text-[#FF7A2F]" />
+              </motion.div>
+              <h3 className="font-display mt-5 text-2xl font-black">Welcome to <span className="gradient-text">the arena!</span></h3>
+              <p className="mt-3 text-sm text-white/65">Your registration is confirmed. A confirmation email + hall ticket will reach you within 24 hours.</p>
+              <button onClick={() => setDone(false)} className="mt-6 inline-flex rounded-full bg-[#FF7A2F] text-black px-6 py-3 font-bold text-sm hover:scale-105 transition">Got it</button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </PageFade>
   );
 }
 
