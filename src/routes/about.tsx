@@ -30,13 +30,6 @@ function Counter({ to, suffix = "" }: { to: number; suffix?: string }) {
   return <span ref={ref}>{v.toLocaleString()}{suffix}</span>;
 }
 
-const timeline = [
-  { y: "2022", t: "The First Spark", d: "Code Bot launches as a city-level robotics meet with 80 students." },
-  { y: "2023", t: "State Stage", d: "Expanded to 12 cities. 400+ teams. Drone Racing added as a flagship event." },
-  { y: "2024", t: "National Recognition", d: "Backed by leading academies. Innovation Challenge introduced for AI projects." },
-  { y: "2025", t: "1000+ Students", d: "First Bot Combat caged arena. Live national broadcast across YouTube." },
-  { y: "2026", t: "The Championship", d: "₹1.5 Lakh prize pool · 6 mega events · India's biggest student robotics battle." },
-];
 
 function About() {
   return (
