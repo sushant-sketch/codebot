@@ -102,13 +102,25 @@ function Contact() {
                   <span className="font-semibold text-white">{f.q}</span>
                   <ChevronDown className={`h-4 w-4 text-[#FF7A2F] transition ${open === i ? "rotate-180" : ""}`} />
                 </button>
-                {open === i && <div className="px-5 pb-5 text-sm text-white/70 leading-relaxed">{f.a}</div>}
+                <AnimatePresence initial={false}>
+                  {open === i && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.25 }}
+                      className="overflow-hidden"
+                    >
+                      <div className="px-5 pb-5 text-sm text-white/70 leading-relaxed">{f.a}</div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
             ))}
           </div>
         </div>
       </div>
-    </div>
+    </PageFade>
   );
 }
 
