@@ -79,30 +79,6 @@ function About() {
         ))}
       </section>
 
-      {/* Timeline */}
-      <section className="mx-auto max-w-5xl px-5 mt-24">
-        <div className="text-center mb-12">
-          <div className="text-[11px] tracking-[0.35em] text-[#00C2E0]">JOURNEY</div>
-          <h2 className="font-display mt-2 text-3xl sm:text-5xl font-black">From <span className="gradient-text">spark</span> to championship</h2>
-        </div>
-        <div className="relative">
-          <div className="absolute left-4 sm:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-[#FF7A2F]/60 to-transparent" />
-          {timeline.map((t, i) => (
-            <div key={t.y} className={`relative grid sm:grid-cols-2 gap-6 mb-8 ${i % 2 ? "sm:[&>*:first-child]:order-2" : ""}`}>
-              <div className={`pl-10 sm:pl-0 ${i % 2 ? "sm:text-left sm:pl-10" : "sm:text-right sm:pr-10"}`}>
-                <div className="font-display text-3xl font-black gradient-text">{t.y}</div>
-              </div>
-              <div className={`pl-10 sm:pl-0 ${i % 2 ? "sm:pr-10 sm:text-right" : "sm:pl-10"}`}>
-                <div className="glass rounded-xl p-5 inline-block max-w-sm text-left">
-                  <div className="font-display text-base font-bold text-[#FF7A2F]">{t.t}</div>
-                  <div className="mt-1 text-sm text-white/65">{t.d}</div>
-                </div>
-              </div>
-              <span className="absolute left-2.5 sm:left-1/2 sm:-translate-x-1/2 top-2 h-3 w-3 rounded-full bg-[#FF7A2F] shadow-[0_0_18px_#FF7A2F]" />
-            </div>
-          ))}
-        </div>
-      </section>
 
       {/* Organiser */}
       <section className="mx-auto max-w-5xl px-5 mt-20">
