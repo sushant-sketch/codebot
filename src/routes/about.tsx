@@ -85,11 +85,11 @@ function About() {
         <div className="glass rounded-3xl p-8 sm:p-12 text-center">
           <GraduationCap className="h-7 w-7 mx-auto mb-3 text-[#00C2E0]" />
           <div className="text-[11px] tracking-[0.35em] text-[#00C2E0]">ORGANISED BY</div>
-          <h3 className="font-display mt-2 text-3xl font-black">SKD Academy</h3>
-          <p className="mt-3 text-white/65 max-w-2xl mx-auto">A leading institution in Lucknow committed to STEM, innovation and future-forward education. Code Bot Championship is our flagship national initiative.</p>
+          <h3 className="font-display mt-2 text-3xl font-black">Create Wiz</h3>
+          <p className="mt-3 text-white/65 max-w-2xl mx-auto">A dynamic education initiative committed to STEM, innovation and future-forward learning. Code Bot Championship is our flagship national event launching for the very first time in 2026.</p>
           <div className="mt-6 flex flex-wrap items-center justify-center gap-6 text-sm text-white/60">
             <span className="inline-flex items-center gap-1.5"><Globe2 className="h-4 w-4 text-[#FF7A2F]" /> Pan-India outreach</span>
-            <span className="inline-flex items-center gap-1.5"><Award className="h-4 w-4 text-[#FF7A2F]" /> 4 years of championships</span>
+            <span className="inline-flex items-center gap-1.5"><Award className="h-4 w-4 text-[#FF7A2F]" /> First edition 2026</span>
           </div>
         </div>
       </section>
