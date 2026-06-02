@@ -21,13 +21,13 @@ const faqs = [
 function Contact() {
   const [open, setOpen] = useState<number | null>(0);
   return (
-    <div className="pt-32 pb-24">
+    <PageFade className="pt-32 pb-24">
       <div className="mx-auto max-w-7xl px-5">
-        <div className="text-center mb-14 max-w-3xl mx-auto">
+        <Reveal className="text-center mb-14 max-w-3xl mx-auto">
           <div className="text-[11px] tracking-[0.35em] text-[#FF7A2F]">CONTACT US</div>
           <h1 className="font-display mt-3 text-4xl sm:text-6xl font-black">Let's <span className="gradient-text">talk</span>.</h1>
           <p className="mt-4 text-white/65">Questions about events, sponsorship or partnerships — we're one message away.</p>
-        </div>
+        </Reveal>
 
         <div className="grid lg:grid-cols-2 gap-6">
           {/* Form */}
