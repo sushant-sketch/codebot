@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { Rocket, Target, Eye, GraduationCap, Globe2, Award } from "lucide-react";
+import { PageFade, Reveal } from "@/components/reveal";
 
 export const Route = createFileRoute("/about")({
   head: () => ({ meta: [{ title: "About · Code Bot Championship 2026" }] }),
