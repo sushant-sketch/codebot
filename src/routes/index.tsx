@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { Countdown } from "@/components/countdown";
 import { EventGrid } from "@/components/event-grid";
-import { ArrowRight, Trophy, Users, Cpu, Sparkles, Calendar, MapPin, Quote, ShieldCheck, Rocket, Cog } from "lucide-react";
+import { ArrowRight, Trophy, Users, Cpu, Sparkles, Calendar, MapPin, Quote, ShieldCheck, Rocket, Cog, Zap } from "lucide-react";
 import logoAsset from "@/assets/codebot-logo.png.asset.json";
 
 export const Route = createFileRoute("/")({
