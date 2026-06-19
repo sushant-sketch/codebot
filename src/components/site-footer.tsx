@@ -7,7 +7,10 @@ export function SiteFooter() {
     <footer className="relative z-10 mt-20 border-t border-white/10 bg-[#0A0A12]">
       <div className="mx-auto max-w-7xl px-6 py-14 grid gap-10 md:grid-cols-4">
         <div>
-          <div className="font-display text-lg font-black gradient-text">CODE BOT 2026</div>
+          <div className="flex items-center gap-2.5">
+            <img src={logoAsset.url} alt="Code Bot Championship" className="h-8 w-8 object-contain" />
+            <div className="font-display text-lg font-black gradient-text">CODE BOT 2026</div>
+          </div>
           <p className="mt-3 text-sm text-white/55 leading-relaxed">India's Ultimate Robotics, AI & Coding Championship. Build. Code. Compete. Conquer.</p>
           <div className="mt-5 flex gap-2">
             {[
