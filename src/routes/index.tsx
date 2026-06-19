@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Countdown } from "@/components/countdown";
 import { EventGrid } from "@/components/event-grid";
 import { ArrowRight, Trophy, Users, Cpu, Sparkles, Calendar, MapPin, Quote, ShieldCheck, Rocket, Cog, Zap } from "lucide-react";
+import logoAsset from "@/assets/codebot-logo.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -55,7 +56,14 @@ export default function Home() {
         </div>
 
         <div className="relative mx-auto max-w-6xl px-5 text-center">
-          <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+          <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6 }}>
+            <img
+              src={logoAsset.url}
+              alt="Code Bot Championship Official Logo"
+              className="h-28 w-28 sm:h-36 sm:w-36 mx-auto mb-4 object-contain drop-shadow-[0_0_30px_rgba(0,194,224,0.4)]"
+            />
+          </motion.div>
+          <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.15 }}>
             <span className="inline-flex items-center gap-2 rounded-full border border-[#FF7A2F]/40 bg-[#FF7A2F]/10 px-4 py-1.5 text-[11px] tracking-[0.3em] text-[#FF7A2F]">
               <span className="h-1.5 w-1.5 rounded-full bg-[#FF7A2F] animate-pulse" />
               INDIA'S BIGGEST STUDENT ROBOTICS BATTLE
