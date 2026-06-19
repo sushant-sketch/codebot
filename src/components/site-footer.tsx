@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Instagram, Youtube, Twitter, Linkedin, Mail, Phone, MapPin } from "lucide-react";
+import logoAsset from "@/assets/codebot-logo.png.asset.json";
 
 export function SiteFooter() {
   return (
