@@ -1,6 +1,7 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { Menu, X, Zap } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import logoAsset from "@/assets/codebot-logo.png.asset.json";
 
 const links = [
   { to: "/", label: "Home" },
