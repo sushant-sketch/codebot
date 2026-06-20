@@ -75,4 +75,4 @@ export function SiteNav() {
               )}
         </header>
       );
-}</nav>
+}
