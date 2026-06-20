@@ -59,7 +59,7 @@ export default function Home() {
             <img
               src="/codebot-logo.png"
               alt="Code Bot Championship Official Logo"
-              className="h-28 w-28 sm:h-36 sm:w-36 mx-auto mb-4 object-contain drop-shadow-[0_0_30px_rgba(0,194,224,0.4)]"
+              className="h-48 w-48 sm:h-64 sm:w-64 mx-auto mb-6 object-contain drop-shadow-[0_0_40px_rgba(0,194,224,0.6)]"
             />
           </motion.div>
           <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.15 }}>
