@@ -47,8 +47,8 @@ export function SiteFooter() {
           <div className="text-xs tracking-[0.25em] text-[#00C2E0] mb-4">CONTACT</div>
           <ul className="space-y-3 text-sm text-white/70">
             <li className="flex items-start gap-2"><MapPin className="h-4 w-4 mt-0.5 text-[#FF7A2F]" /> SKD Academy, 2D/HS-1, Vrindavan Yojna, Lucknow – 226025</li>
-            <li className="flex items-center gap-2"><Phone className="h-4 w-4 text-[#FF7A2F]" /> <a href="tel:+919219817505" className="hover:text-white">+91 92198 17505</a></li>
-            <li className="flex items-center gap-2"><Mail className="h-4 w-4 text-[#FF7A2F]" /> <a href="mailto:codebot@gmail.com" className="hover:text-white">codebot@gmail.com</a></li>
+            <li className="flex items-center gap-2"><Phone className="h-4 w-4 text-[#FF7A2F]" /> <a href="tel:+917607650100" className="hover:text-white">+91 76076 50100</a></li>
+            <li className="flex items-center gap-2"><Mail className="h-4 w-4 text-[#FF7A2F]" /> <a href="mailto:codebot2k26@gmail.com" className="hover:text-white">codebot2k26@gmail.com</a></li>
           </ul>
         </div>
       </div>
