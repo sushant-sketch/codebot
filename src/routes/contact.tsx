@@ -49,8 +49,8 @@ function Contact() {
           {/* Info */}
           <div className="space-y-5">
             {[
-              { icon: Phone, t: "Phone", v: "+91 92198 17505", href: "tel:+919219817505", c: "#FF7A2F" },
-              { icon: Mail, t: "Email", v: "codebot@gmail.com", href: "mailto:codebot@gmail.com", c: "#00C2E0" },
+            { icon: Phone, t: "Phone", v: "+91 76076 50100", href: "tel:+917607650100", c: "#FF7A2F" },
+              { icon: Mail, t: "Email", v: "codebot2k26@gmail.com", href: "mailto:codebot2k26@gmail.com", c: "#00C2E0" },
               { icon: MapPin, t: "Venue", v: "SKD Academy, 2D/HS-1, Vrindavan Yojna, Lucknow – 226025", href: "#map", c: "#B06EFF" },
             ].map((c) => (
               <a key={c.t} href={c.href} className="block glass glass-hover rounded-2xl p-5 group">
